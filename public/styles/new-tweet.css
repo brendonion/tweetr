@@ -15,6 +15,12 @@ section.new-tweet h2 {
   padding-top: 10px;
 }
 
+section.new-tweet h4 {
+  color: tomato;
+  margin: 0;
+  height: 0;
+}
+
 textarea {
   padding: 5px;
   width: 95%;
