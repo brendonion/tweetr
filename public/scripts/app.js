@@ -97,6 +97,7 @@ $(document).ready(function() {
 
   loadTweets();
 
+
   $('.compose-button').on('click', function(event){
     if ($('.new-tweet:first').is(':hidden')){
       $('.new-tweet').slideDown('fast');
@@ -105,6 +106,23 @@ $(document).ready(function() {
       $('.new-tweet').slideUp('fast');
     }
   });
+
+  $('.hide').on('click', function(event){
+    $('.tweets:last').remove();
+  });
+
+  $('.clear').on('click', function(event){
+    $('.tweets').remove();
+  });
+
+  $('textarea').keypress(function(event){
+    if (event.which === 13 && !event.shiftKey){
+      $(this).closest('form').submit();
+      event.preventDefault();
+      return false;
+    }
+  });
+
 
 });
 
