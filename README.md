@@ -1,39 +1,79 @@
-# Tweeter Project
+## Goal
 
 A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and plain ol' CSS3 to help web bootcamp students get comfortable with their front-end chops with those technologies.
 
-## Technical Approach & Objectives
+The server is built with Node, Express and Mongo and allows users to request and submit tweets via a JSON end-point. The server/express code should not require any change from the student.
 
-This project is starter (incomplete) code for students to fork and clone, located here.
+Students must work with and implement the HTML, CSS and client-side JS to bring this project to life, turning it...
 
-The server is built with Node and Express and allows users to request and submit tweets via a JSON end-point. The server/express code should not require any change from the student.
+#### From this (initial state):
 
-Students must work with and implement the HTML, CSS and client-side JS to bring this project to life.
+!["Tweeter - Initial state"](http://d.pr/i/12hNI/4PMJqFdx+)
 
-## Final Product
+#### To this (final state):
 
-The end result should look and function like this:
+!["End Result - Tweeter"](https://d.pr/i/1eyEY/4MEH16BY+)
 
-!["End Result"](https://d.pr/i/1eyEY/4MEH16BY+)
+## Functional Requirements
 
-## Getting Started
+*   Single page app architecture.
+*   Use ajax to communicate w/ Tweeter backend server
+*   Tweets should be persisted to MongoDB and survive server restart
 
-1. Fork and clone your fork of this repository.
-2. Install dependencies: `npm install` or `npm i` for short.
-3. Start the web server from the command line: `npm run local`
-4. Open the app on <http://localhost:8080/> and make sure that it's loading.
+Page Contains:
 
-## Dependencies & Troubleshooting
+*   Navbar
 
-Dependencies:
+    *   fixed to top
+    *   Padding on both sides
+    *   Should look similar if not identical to image/gif provided
+    *   contains Compose button, which:
 
-- Express
-- Node 5.10.x or above
+        *   Toggles display of inline compose box (animation required)
+        *   Auto-focuses the textarea in the compose box
 
-**This project assumes that:**
+*   Tweet compose box
 
-- It is running in our Vagrant machine (and therefore...)
-- It is Running with Node 5.10.x or above
+    *   Contains form to submit tweet, above the tweets
+    *   Form contains:
+
+        *   tweet textarea
+        *   tweet submit button (left aligned)
+        *   character counter (right aligned)
+    *   validates input on submit
+
+        *   Indicates input errors (alerts are okay)
+    *   Character counter updates on keypress
+
+        *   Turn red (or similar) when count > 140 chars
+    *   Does not submit (alert feedback) if empty or count > 140
+
+        *   should be smart enough to catch empty spaces ("  ") as text [minor]
+    *   refreshes tweet list when successfully submitted
+
+*   List of tweets
+
+    *   Order by post time descending (reverse chronological)
+    *   Each tweet:
+
+        *   Must look like the tweet [major]
+        *   Should have semantic HTML tags (`article`, etc) [minor]
+        *   Contains:
+        *   user avatar
+        *   user name
+        *   user handle
+        *   tweet text
+
+            *   not required to handle carriage return / new line
+
+## Stack Requirements
+
+*   _ES6_ (Simple, client side JS)
+*   _jQuery_ (Ajax)
+*   _CSS3_ (rounded corners, transitions, etc.)
+*   _Semantic HTML5_ tags (`section`, `article`, etc)
+*   _git_ for version control
+*   _mongodb_ for persistance
 
 
 
